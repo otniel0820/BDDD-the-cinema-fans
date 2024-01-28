@@ -1,15 +1,15 @@
 import { Router } from "express"
-import { createBook, deleteBook, getBookById, getBooks, updateBook } from "../controllers"
-import { bookSchemaValidateMW } from "../middleware/bookSchemaValidate"
+import { createUser, getUsers, updateUser, getUserById, deleteUser  } from "../controllers/usersControllers"
+import {userSchemaValidateMW} from "../middleware/userSchemaValidate"
 import modelSchemaFactory from "../factories/modelSchemaFactory"
 
 
 const routeUser: any = Router()
 
-routeUser.get('/User', getUsers)
-routeUser.get('/User/:id', getUserById)
-routeUser.post('/User', modelSchemaFactory([UserSchemaValidateMW]), createUser)
-routeUser.put('/User/:id', updateUser)
-routeUser.delete('/User/:id', deleteUser)
+routeUser.get('/user', getUsers)
+routeUser.get('/user/:id', getUserById)
+routeUser.post('/user', modelSchemaFactory([userSchemaValidateMW]), createUser)
+routeUser.put('/user/:id', updateUser)
+routeUser.delete('/user/:id', deleteUser)
 
 export default routeUser

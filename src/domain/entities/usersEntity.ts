@@ -13,6 +13,7 @@ export const userSchema = zod.object({
   followUp: zod.string(),
   followUpDate: zod.string(),
   comments: zod.string(),
+  isClient: zod.boolean(),
 });
 
 export type UserDTO = zod.infer<typeof userSchema> & BaseEntity

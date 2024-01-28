@@ -89,7 +89,7 @@ const getUserById = async (req: Request, res: Response) => {
 const deleteUser = async (req: Request, res: Response) => {
     const id = req.params.id;
     try {
-      await db.collection("books").doc(id).delete();
+      await db.collection("users").doc(id).delete();
       res.status(200).json({ message: "Deleted user" });
     } catch (error) {
       console.error("Error deleting user:", error);
