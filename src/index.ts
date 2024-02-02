@@ -15,6 +15,10 @@ app.use('/api', routeUser)
 
 const port = process.env.PORT || 8080;
 
+app.get('/', (_req, res) => {
+  return res.send('App user Funcionando')
+})
+
 app.listen(port, () => {
   console.log(`USERS_API: Listening on port ${port}`);
 });
