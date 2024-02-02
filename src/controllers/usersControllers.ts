@@ -21,7 +21,9 @@ const getUsers = (req: Request, res: Response) => {
       res.json(documents);
     })
     .catch((error: Error) => {
-      res.status(500).json({ error: "Error geting document" });
+      
+      
+      res.status(500).json({ error: "Error geting document", log: error.message });
     });
 };
 

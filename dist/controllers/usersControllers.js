@@ -30,7 +30,7 @@ const getUsers = (req, res) => {
         res.json(documents);
     })
         .catch((error) => {
-        res.status(500).json({ error: "Error geting document" });
+        res.status(500).json({ error: "Error geting document", log: error.message });
     });
 };
 exports.getUsers = getUsers;
