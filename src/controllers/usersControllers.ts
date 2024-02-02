@@ -5,7 +5,7 @@ import { Response, Request } from "express";
 import { errorFactory } from "../factories/errorFactory";
 import { firestore } from "firebase-admin";
 
-//Obtener todos los libros
+//Obtener todos los usuarios
 
 const getUsers = (req: Request, res: Response) => {
   db.collection("users")
@@ -25,7 +25,7 @@ const getUsers = (req: Request, res: Response) => {
     });
 };
 
-// crear libro
+// crear usuario
 
 const createUser = async (req: Request, res: Response) => {
   try {
@@ -43,7 +43,7 @@ const createUser = async (req: Request, res: Response) => {
   }
 };
 
-// Actualizar un libro
+// Actualizar un usuario
 
 const updateUser = async (req: Request, res: Response) => {
   const id = req.params.id;
@@ -60,7 +60,7 @@ const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-//Obtener book por id
+//Obtener usuario por id
 
 const getUserById = async (req: Request, res: Response) => {
   const id = req.params.id;
@@ -84,7 +84,7 @@ const getUserById = async (req: Request, res: Response) => {
   }
 };
 
-//Eliminar libro
+//Eliminar usuario
 
 const deleteUser = async (req: Request, res: Response) => {
     const id = req.params.id;

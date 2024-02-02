@@ -15,7 +15,7 @@ const entities_1 = require("../domain/entities");
 const firebase_1 = require("../firebase");
 const errorFactory_1 = require("../factories/errorFactory");
 const firebase_admin_1 = require("firebase-admin");
-//Obtener todos los libros
+//Obtener todos los usuarios
 const getUsers = (req, res) => {
     firebase_1.db.collection("users")
         .get()
@@ -34,7 +34,7 @@ const getUsers = (req, res) => {
     });
 };
 exports.getUsers = getUsers;
-// crear libro
+// crear usuario
 const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const userRef = firebase_1.db.collection("users").doc((0, utils_1.generateKsuid)(entities_1.USER_ID_PREFIX));
@@ -49,7 +49,7 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.createUser = createUser;
-// Actualizar un libro
+// Actualizar un usuario
 const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
     try {
@@ -66,7 +66,7 @@ const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.updateUser = updateUser;
-//Obtener book por id
+//Obtener usuario por id
 const getUserById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
     const userRef = firebase_1.db.collection("users").doc(id);
@@ -86,7 +86,7 @@ const getUserById = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.getUserById = getUserById;
-//Eliminar libro
+//Eliminar usuario
 const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
     try {
