@@ -23,8 +23,8 @@ const getUsers = (req, res) => {
         const documents = [];
         snapshot.forEach((doc) => {
             documents.push(Object.assign({ id: doc.id }, doc.data()));
-            documents.sort((bannerA, bannerB) => {
-                return Number(bannerA.id) - Number(bannerB.id);
+            documents.sort((userA, userB) => {
+                return Number(userA.id) - Number(userB.id);
             });
         });
         res.json(documents);

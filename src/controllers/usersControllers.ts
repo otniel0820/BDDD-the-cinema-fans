@@ -14,8 +14,8 @@ const getUsers = (req: Request, res: Response) => {
       const documents: UserDTO[] = [];
       snapshot.forEach((doc: firestore.QueryDocumentSnapshot) => {
         documents.push({ id: doc.id, ...doc.data() } as any);
-        documents.sort((bannerA: UserDTO, bannerB: UserDTO) => {
-          return Number(bannerA.id) - Number(bannerB.id);
+        documents.sort((userA: UserDTO, userB: UserDTO) => {
+          return Number(userA.id) - Number(userB.id);
         });
       });
       res.json(documents);
